@@ -1,0 +1,38 @@
+ansible-navigator:
+  # ansible:
+  #   config:
+  #     help: false
+  #     path: ansible.cfg
+
+  editor:
+    command: code -g {filename}:{line_number}
+    console: false
+
+  app: run
+
+  execution-environment:
+    container-engine: podman
+    enabled: true
+    environment-variables:
+      pass:
+        - TOWER_HOST
+        - TOWER_VERIFY_SSL
+        - TOWER_OAUTH_TOKEN
+        - TOWER_PASSWORD
+        - TOWER_USERNAME
+        - TOWER_FORMAT
+    image: quay.io/deparris/ee-controller:latest
+    pull-policy: missing
+
+  logging:
+    level: debug
+
+  # mode: stdout
+
+  # inventory-columns:
+  #   - ansible_network_os
+  #   - ansible_network_cli_ssh_type
+  #   - ansible_connection
+
+  playbook-artifact:
+    enable: false
