@@ -11,6 +11,14 @@ The examples run against [DevNet always-on devices](https://developer.cisco.com/
 
 ## Examples
 
+You can run any example by specifying the resource module in the variable `rm`.
+
+```bash
+ansible-navigator run main.yml -e rm=acls
+```
+
+Alternatively, you can run them directly as follows.
+
 ### ACL
 
 ```bash
@@ -90,9 +98,4 @@ ansible-navigator run user.yml
 
 ### Issues
 
-- [nxos snmp](https://github.com/ansible-collections/cisco.nxos/issues/454)
-- [nxos ntp](https://github.com/ansible-collections/cisco.nxos/issues/450)
-- [iosxr ospfv2](https://github.com/ansible-collections/cisco.iosxr/issues/227)
-- [iosxr prefix_lists](https://github.com/ansible-collections/cisco.iosxr/issues/229)
-- [ios logging](https://github.com/ansible-collections/cisco.ios/issues/545)
 - iosxr: `bgp.router_id` nxos: `router_id` ios: `bgp.router_id.address`
